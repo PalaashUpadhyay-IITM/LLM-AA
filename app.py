@@ -23,10 +23,9 @@ def root():
     return {'message': 'Hello World from docker container'}
 
 def parse_task(task: str) -> str:
-    """ Use OpenAI to classify the task into predefined operations (A1–A10). """
-    openai_practice_api_key = "sk"
+    """ Use OpenAI to classify the task into predefined operations (A1 to A10). """
     #print(os.getenv("OPENAI_API_KEY"))
-    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", openai_practice_api_key)
+    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
     
     prompt = f"""
     Task: "{task}"
